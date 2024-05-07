@@ -2,9 +2,10 @@
 #define FAST_FWD_CRC_H
 
 #include <stdint.h>
+#include <stddef.h>
 
 // Given a CRC-32 `state` for some prefix P, compute the CRC-32 of P with `len`
 // copies of the byte `padding` appended.
-uint32_t fast_fwd_crc32(uint32_t state, unsigned char padding, uint32_t len);
+uint32_t fast_fwd_crc32(uint32_t state, unsigned char padding, size_t len);
 
 #endif

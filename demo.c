@@ -10,6 +10,11 @@
 
 static uint32_t zlib_crc(uint32_t state, const char *data, size_t len)
 {
+	while (len > INT_MAX) {
+		state = crc32(state, (const Bytef*)data, INT_MAX);
+		data += INT_MAX;
+		len -= INT_MAX;
+	}
 	return crc32(state, (const Bytef*)data, len);
 }
 

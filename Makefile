@@ -9,7 +9,7 @@ $(PROG): $(OBJS)
 clean:
 	rm -f $(PROG) $(OBJS)
 
-run:
+run: demo
 	./demo "some prefix" ff 1234
 	./demo "another prefix" 5a 5678
 	./demo "and yet another prefix" 00 12345678

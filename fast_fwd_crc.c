@@ -27,7 +27,7 @@ static uint32_t crc32_reduce(uint64_t wide)
 	return (uint32_t)wide;
 }
 
-uint32_t fast_fwd_crc32(uint32_t state, unsigned char pad, uint32_t len)
+uint32_t fast_fwd_crc32(uint32_t state, unsigned char pad, size_t len)
 {
 	// initialize the affine function to appending a single pad byte
 	uint32_t a = (uint32_t)1 << 24;
